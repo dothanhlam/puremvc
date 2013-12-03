@@ -9,8 +9,7 @@ puremvc.define({
         name: 'App.view.MainApp',
 
         /** @constructor */
-        constructor: function ()
-        {
+        constructor: function (){
             // use HTML5 querySelector for DOM retrieval
             this.main = document.querySelector('#main');
             this.main.innerText = "loading ...";
@@ -29,7 +28,5 @@ puremvc.define({
         }
     },
     // STATIC MEMBERS GO HERE
-    {
-
-    }
+    {}
 )

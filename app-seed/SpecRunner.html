@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.1/jasmine.css">
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine-html.js"></script>
+
+  <!-- include source files here... -->
+  <!-- PUREMVC LIBRARY -->
+  <script src="lib/puremvc/puremvc-1.0.js"></script>
+  <!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
+  <script src="src/AppConstants.js"></script>
+
+  <!-- APPLICATION FACADE -->
+  <script src="src/ApplicationFacade.js"></script>
+
+  <!-- PROXIES -->
+  <script src="src/model/proxy/HelloProxy.js"></script>
+
+  <!-- COMMANDS -->
+  <script src="src/controller/command/StartupCommand.js"></script>
+  <script src="src/controller/command/PrepareViewCommand.js"></script>
+  <script src="src/controller/command/PrepareModelCommand.js"></script>
+  <script src="src/controller/command/PrepareControllerCommand.js"></script>
+  <script src="src/controller/command/HelloCommand.js"></script>
+
+  <!-- VIEW COMPONENTS -->
+  <script src="src/view/MainApp.js"></script>
+  <!-- MEDIATORS -->
+  <script src="src/view/mediator/ApplicationMediator.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/ApplicationFacadeSpec.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

@@ -21,6 +21,7 @@ puremvc.define({
             }
         }
     },
+
     {
         getInstance: function (multitonKey) {
             var instanceMap = puremvc.Facade.instanceMap;

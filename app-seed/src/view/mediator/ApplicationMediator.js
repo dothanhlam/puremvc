@@ -18,7 +18,7 @@ puremvc.define({
 
         /** @override */
         handleNotification: function (note){
-            switch ( note.getName() ){
+            switch (note.getName()){
                 case App.AppConstants.DISPLAY_MESSAGE:
                     this.getViewComponent().update(note.getBody());
                 break;
@@ -32,9 +32,7 @@ puremvc.define({
         },
 
         /** @override */
-        onRemove: function (){
-
-        }
+        onRemove: function (){}
     },
     // STATIC MEMBERS
     {

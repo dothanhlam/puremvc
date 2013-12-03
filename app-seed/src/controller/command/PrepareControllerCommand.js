@@ -14,7 +14,7 @@ puremvc.define({
     {
         /** @override */
         execute: function (note) {
-            this.facade.registerCommand( App.AppConstants.SEND_MESSAGE, App.controller.command.HelloCommand );
+            this.facade.registerCommand(App.AppConstants.SEND_MESSAGE, App.controller.command.HelloCommand);
         }
     }
 );

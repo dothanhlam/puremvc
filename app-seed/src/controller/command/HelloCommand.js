@@ -18,7 +18,7 @@ puremvc.define
         /** @override */
         execute: function (note){
             var message = note.getBody();
-            var proxy = this.facade.retrieveProxy( App.model.proxy.HelloProxy.NAME );
+            var proxy = this.facade.retrieveProxy(App.model.proxy.HelloProxy.NAME);
             proxy.setMessage(message);
         }
     }
