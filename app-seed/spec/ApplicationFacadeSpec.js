@@ -16,6 +16,36 @@ describe("ApplicationFacade", function() {
     });
 
     it("should have startup function", function() {
-        expect(facade.startup).not.toBe(null);
+        expect(facade.startup).toBeDefined();
+    });
+});
+
+describe("ApplicationFaccade startup", function() {
+    var facade;
+
+    beforeEach(function() {
+        facade = App.ApplicationFacade.getInstance(App.ApplicationFacade.NAME);
+        try {
+            facade.startup();
+        }
+        catch (e) {
+            // exception that we have no reference to DOM objects
+        }
+    });
+
+    it("initialized should be true after startup", function() {
+        expect(facade.initialized).toBeDefined();
+    });
+
+    it("has controller", function() {
+        expect(facade.controller).toBeDefined();
+    });
+
+    it("has model", function() {
+        expect(facade.model).toBeDefined();
+    });
+
+    it("has view", function() {
+        expect(facade.view).toBeDefined();
     });
 });
