@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PureMVC JS Application Seed</title>
+    <!-- PUREMVC LIBRARY -->
+    <script src="lib/puremvc/puremvc-1.0.js"></script>
+    <style>
+        #main {
+            width: 800px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid brown;
+        }
+    </style>
+    <!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
+    <script src="puremvc/AppConstants.js"></script>
+
+    <!-- APPLICATION FACADE -->
+    <script src="puremvc/ApplicationFacade.js"></script>
+
+    <!-- PROXIES -->
+    <script src="puremvc/model/proxy/HelloProxy.js"></script>
+
+    <!-- COMMANDS -->
+    <script src="puremvc/controller/command/StartupCommand.js"></script>
+    <script src="puremvc/controller/command/PrepareViewCommand.js"></script>
+    <script src="puremvc/controller/command/PrepareModelCommand.js"></script>
+    <script src="puremvc/controller/command/PrepareControllerCommand.js"></script>
+    <script src="puremvc/controller/command/HelloCommand.js"></script>
+
+    <!-- VIEW COMPONENTS -->
+    <script src="puremvc/view/MainApp.js"></script>
+    <!-- MEDIATORS -->
+    <script src="puremvc/view/mediator/ApplicationMediator.js"></script>
+</head>
+<body>
+    <div id="main"></div>
+    <script type="text/javascript">
+        window.onload = function() {
+            App.ApplicationFacade.getInstance(App.ApplicationFacade.NAME).startup();
+        }
+    </script>
+</body>
+</html>
