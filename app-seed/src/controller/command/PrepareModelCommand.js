@@ -13,10 +13,8 @@ puremvc.define({
     // INSTANCE MEMBERS
     {
         /** @override */
-        execute: function (note)
-        {
+        execute: function (note){
             this.facade.registerProxy( new App.model.proxy.HelloProxy);
-            this.sendNotification(App.AppConstants.SEND_MESSAGE, "Hello PureMVC");
         }
     }
-)
+);

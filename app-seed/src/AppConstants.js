@@ -10,6 +10,7 @@ puremvc.define({
     {},
     {
         CORE_NAME: 'App',
+        APP_VERSION: 'PureMVC Application Seed version 0.1',
         // Notifications
         STARTUP: 'startup',
         SEND_MESSAGE: 'send_message',

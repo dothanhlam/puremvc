@@ -13,7 +13,7 @@ puremvc.define({
     {
         startup: function (){
             if (!this.initialized){
-                this.initialized= true;
+                this.initialized = true;
                 // associate the SetupCommand with the STARTUP notification
                 this.registerCommand(App.AppConstants.STARTUP, App.controller.command.StartupCommand );
                 // issue the SETUP notification to execute StartupCommand

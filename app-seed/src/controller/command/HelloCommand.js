@@ -16,8 +16,7 @@ puremvc.define
     // INSTANCE MEMBERS
     {
         /** @override */
-        execute: function (note)
-        {
+        execute: function (note){
             var message = note.getBody();
             var proxy = this.facade.retrieveProxy( App.model.proxy.HelloProxy.NAME );
             proxy.setMessage(message);
