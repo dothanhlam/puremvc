@@ -15,6 +15,7 @@ puremvc.define({
         /** @override */
         execute: function (note){
             this.facade.registerProxy(new App.model.proxy.HelloProxy);
+            this.facade.registerProxy(new App.model.proxy.DaisyProxy);
         }
     }
 );

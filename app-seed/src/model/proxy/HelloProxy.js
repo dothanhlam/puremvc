@@ -13,7 +13,7 @@ puremvc.define({
     // INSTANCE MEMBERS
     {
         onRegister: function() {
-            this.sendNotification(App.AppConstants.SEND_MESSAGE, "Hello, PureMVC");
+     //       this.sendNotification(App.AppConstants.SEND_MESSAGE, "Hello, PureMVC");
         },
 
         setMessage: function ( message ) {

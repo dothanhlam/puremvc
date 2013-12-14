@@ -4,6 +4,7 @@
     <title>PureMVC JS Application Seed</title>
     <link rel="stylesheet" href="assets/css/app.css" type="text/css">
 
+    <script src="lib/createjs/createjs-2013.09.25.min.js"></script>
     <!-- PUREMVC LIBRARY -->
     <script src="lib/puremvc/puremvc-1.0.js"></script>
     <!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
@@ -14,6 +15,9 @@
 
     <!-- PROXIES -->
     <script src="src/model/proxy/HelloProxy.js"></script>
+    <script src="src/model/proxy/DaisyProxy.js"></script>
+    <!-- VALUES OBJECTS -->
+    <script src="src/model/vo/DaisyVO.js"></script>
 
     <!-- COMMANDS -->
     <script src="src/controller/command/StartupCommand.js"></script>
@@ -21,6 +25,7 @@
     <script src="src/controller/command/PrepareModelCommand.js"></script>
     <script src="src/controller/command/PrepareControllerCommand.js"></script>
     <script src="src/controller/command/HelloCommand.js"></script>
+    <script src="src/controller/command/DaisyCommand.js"></script>
 
     <!-- VIEW COMPONENTS -->
     <script src="src/view/MainApp.js"></script>
@@ -28,9 +33,13 @@
     <script src="src/view/mediator/ApplicationMediator.js"></script>
 </head>
 <body>
-    <div id="main">
+    <div>
+        <div id="main">
+            <canvas id="mainCanvas" width="800" height="400"></canvas>
+        </div>
+        <input id="daisies" type="button" value="Generate daisies" >
+        <p id="version">version</p>
     </div>
-    <p id="version">version</p>
     <script type="text/javascript">
         window.onload = function() {
             App.ApplicationFacade.getInstance(App.ApplicationFacade.NAME).startup();

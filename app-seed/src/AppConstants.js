@@ -14,6 +14,9 @@ puremvc.define({
         // Notifications
         STARTUP: 'startup',
         SEND_MESSAGE: 'send_message',
-        DISPLAY_MESSAGE: 'display_message'
+        DISPLAY_MESSAGE: 'display_message',
+       // only for createjs brand
+        UPDATE_SCREEN: 'update_screen',
+        BUILD_DAISY: 'build_daisy'
     }
 );

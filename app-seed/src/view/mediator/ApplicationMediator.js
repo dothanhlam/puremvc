@@ -13,12 +13,17 @@ puremvc.define({
     {
         /** @override */
         listNotificationInterests: function (){
-            return [App.AppConstants.DISPLAY_MESSAGE]
+            return [App.AppConstants.DISPLAY_MESSAGE, App.AppConstants.UPDATE_SCREEN]
         },
 
         /** @override */
         handleNotification: function (note){
             switch (note.getName()){
+                case App.AppConstants.UPDATE_SCREEN:
+                    var daisies = note.getBody();
+                    this.getViewComponent().drawDaisies(daisies);
+                break;
+
                 case App.AppConstants.DISPLAY_MESSAGE:
                     this.getViewComponent().update(note.getBody());
                 break;
@@ -28,11 +33,18 @@ puremvc.define({
 
         /** @override */
         onRegister: function (){
-            this.setViewComponent( new App.view.MainApp );
+            var view = new App.view.MainApp;
+            this.setViewComponent(view);
+            view.mediator = this;
+            var self = this;
+            view.daisies.addEventListener("click",  function() {
+                self.sendNotification(App.AppConstants.BUILD_DAISY, 10);
+            });
         },
 
         /** @override */
         onRemove: function (){}
+
     },
     // STATIC MEMBERS
     {
