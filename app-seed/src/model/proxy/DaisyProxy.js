@@ -31,6 +31,12 @@ puremvc.define({
                 arr.push(new App.model.vo.DaisyVO(this.image));
             }
             this.sendNotification( App.AppConstants.UPDATE_SCREEN, arr );
+        },
+
+        removeDaisy: function(daisy) {
+            // do some stuff here
+            console.log("daisy to be removed: " + daisy);
+
         }
     },
     // STATIC MEMBERS

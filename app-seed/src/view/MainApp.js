@@ -37,6 +37,7 @@ puremvc.define({
 
         drawDaisies: function(daisies) {
             var bitmap = null;
+            var self = this;
             for (var i = 0; i < daisies.length; i ++) {
                 var daisy = daisies[i];
                 bitmap = new createjs.Bitmap(daisy.image);
@@ -46,6 +47,12 @@ puremvc.define({
                 bitmap.scaleX = bitmap.scaleY = daisy.scale;
                 bitmap.regX = daisy.regX;
                 bitmap.regY = daisy.regY;
+                bitmap.name = "daisy_" + i;
+                bitmap.on("mousedown", function(evt) {
+                    self.container.removeChild(evt.target);
+                    self.mediator.sendNotification(App.AppConstants.REMOVE_DAISY, evt.target.name);
+                    self.stage.update();
+                });
             }
 
             this.stage.update();

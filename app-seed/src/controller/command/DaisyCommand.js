@@ -9,7 +9,7 @@ puremvc.define
 (
     // CLASS INFO
     {
-            name: 'App.controller.command.DaisyCommand',
+        name: 'App.controller.command.DaisyCommand',
         parent:puremvc.SimpleCommand
     },
 
@@ -17,10 +17,20 @@ puremvc.define
     {
         /** @override */
         execute: function (note){
-            var daisies = note.getBody();
             var proxy = this.facade.retrieveProxy(App.model.proxy.DaisyProxy.NAME);
-            console.log("daisy to built " + daisies);
-            proxy.createDaisyField(daisies);
+
+            switch (note.getName()) {
+               case App.AppConstants.BUILD_DAISY:
+                   var daisies = note.getBody();
+                   console.log("daisy to built " + daisies);
+                   proxy.createDaisyField(daisies);
+                   break;
+
+               case App.AppConstants.REMOVE_DAISY:
+                   var daisyTobeRemoved = note.getBody();
+                   proxy.removeDaisy(daisyTobeRemoved);
+                   break;
+           }
         }
     }
 );

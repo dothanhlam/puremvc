@@ -17,6 +17,7 @@ puremvc.define({
         DISPLAY_MESSAGE: 'display_message',
        // only for createjs brand
         UPDATE_SCREEN: 'update_screen',
-        BUILD_DAISY: 'build_daisy'
+        BUILD_DAISY: 'build_daisy',
+        REMOVE_DAISY: 'remove_daisy'
     }
 );

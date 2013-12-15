@@ -16,6 +16,8 @@ puremvc.define({
         execute: function (note) {
             this.facade.registerCommand(App.AppConstants.SEND_MESSAGE, App.controller.command.HelloCommand);
             this.facade.registerCommand(App.AppConstants.BUILD_DAISY, App.controller.command.DaisyCommand);
+            this.facade.registerCommand(App.AppConstants.REMOVE_DAISY, App.controller.command.DaisyCommand);
+
         }
     }
 );
